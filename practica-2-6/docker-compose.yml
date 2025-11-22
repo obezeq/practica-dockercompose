@@ -1,0 +1,36 @@
+version: '3.1'
+
+services:
+  frontend:
+    image: iesgn/temperaturas_frontend
+    restart: always
+    ports:
+      - "${FRONTEND_PORT}:3000"
+    environment:
+      TEMP_SERVER: ${BACKEND_HOST}:${BACKEND_PORT}
+    depends_on:
+      - backend
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 128M
+        reservations:
+          cpus: '0.25'
+          memory: 64M
+
+  backend:
+    image: iesgn/temperaturas_backend
+    restart: always
+    healthcheck:
+      test: ["CMD", "nc", "-z", "localhost", "5000"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 40s
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 128M
