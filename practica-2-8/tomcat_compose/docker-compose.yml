@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  aplicacionjava:
+    image: tomcat:9.0
+    container_name: tomcat_server
+    volumes:
+      - ./sample.war:/usr/local/tomcat/webapps/sample.war:ro
+    restart: always
+
+  proxy:
+    image: nginx
+    container_name: nginx_proxy
+    ports:
+      - "80:80"
+    volumes:
+      - ./default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - aplicacionjava
+    restart: always
