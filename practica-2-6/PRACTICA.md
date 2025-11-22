@@ -167,9 +167,7 @@ docker-compose ps
 
 4. En los logs del frontend, localiza las peticiones HTTP al backend
 
-**Captura de pantalla:**
-
-![Peticiones HTTP en logs del frontend]()
+![Peticiones HTTP en logs del frontend](images/parte-2-tarea-2-3.png)
 
 ---
 
@@ -216,8 +214,6 @@ docker-compose start backend
 **Respuesta:**
 
 Después de reiniciar el backend, la aplicación vuelve a funcionar correctamente sin necesidad de reiniciar el frontend. Esto demuestra la resiliencia de la arquitectura de microservicios: el frontend puede recuperarse automáticamente cuando el backend vuelve a estar disponible, sin necesidad de ser reiniciado.
-
-**Captura de pantalla:**
 
 ![Aplicación recuperada](images/parte-2-tarea-2-3-recuperar.png)
 
@@ -338,8 +334,6 @@ Usando el comando `docker-compose ps` o `docker ps` puedo ver que Docker asigna 
 
 Cada instancia es accesible desde su puerto correspondiente en localhost.
 
-**Captura de pantalla:**
-
 ![Puertos asignados](images/parte-3-tarea-3-2-escalar-webmostrar.png)
 
 ---
@@ -412,8 +406,6 @@ services:
 docker-compose up -d
 docker stats
 ```
-
-**Captura de pantalla:**
 
 ![Verificación de recursos](images/parte-4-tarea-4-1.png)
 
@@ -578,8 +570,6 @@ services:
 docker-compose down
 docker-compose up -d
 ```
-
-**Captura de pantalla:**
 
 ![Aplicación con variables de entorno](images/parte-4-tarea-4-2-env.png)
 
