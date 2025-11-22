@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app:
+    ports:
+      - "8080:5000"
+    environment:
+      DEBUG: "true"
+    restart: "no"
+
+  redis:
+    ports:
+      - "6379:6379"
+    restart: "no"
