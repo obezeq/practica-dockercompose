@@ -56,8 +56,6 @@ Identifica:
    - Cómo establecer variables de entorno
    - Políticas de reinicio disponibles
 
-**[Tu archivo docker-compose.yml aquí con comentarios]**
-
 ```yaml
 version: '3.8'
 
@@ -82,8 +80,6 @@ services:
 volumes:
   redis_data:
 ```
-
-**[Captura de pantalla del archivo creado]**
 
 ---
 
@@ -207,7 +203,7 @@ docker-compose up -d
 
 1. Modifica el archivo `docker-compose.yml` para que la aplicación sea accesible en el puerto 9090 del host.
 
-**[Archivo docker-compose.yml modificado]**
+
 
 ```yaml
 version: '3.8'
@@ -325,7 +321,7 @@ Docker Compose lee automaticamente un archivo '.env' que este en el mismo direct
 
 3. Modifica tu `docker-compose.yml` para usar estas variables con la sintaxis `${NOMBRE_VARIABLE}`.
 
-**[Archivo docker-compose.yml modificado]**
+
 
 ```yaml
 version: '3.8'
@@ -508,7 +504,7 @@ Añadiendo el flag `-f` se puede hacer un docker compose de un archivo en especi
    - `docker-compose.dev.yml` - Configuración específica de desarrollo
    - `docker-compose.prod.yml` - Configuración específica de producción
 
-**[Contenido de docker-compose.yml base]**
+`docker-compose.yml`
 
 ```yaml
 version: '3.8'
@@ -531,7 +527,7 @@ volumes:
   redis_data:
 ```
 
-**[Contenido de docker-compose.dev.yml]**
+`docker-compose.dev.yml`
 
 ```yaml
 version: '3.8'
@@ -550,7 +546,7 @@ services:
     restart: "no"
 ```
 
-**[Contenido de docker-compose.prod.yml]**
+`docker-compose.prod.yml`
 
 ```yaml
 version: '3.8'
