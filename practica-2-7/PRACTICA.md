@@ -992,4 +992,3 @@ En producción usaría volúmenes Docker. Rinden mejor, son más seguros, no dep
 ### 3. Testing / CI
 
 En CI usaría volúmenes Docker. Los contenedores se crean y destruyen todo el rato, y los volúmenes son más rápidos y limpios. Además, evito depender de las rutas del runner de CI y puedo paralelizar tareas sin problemas. Bind mounts solo los usaría si quiero inyectar código de pruebas o sacar informes del contenedor.
-
